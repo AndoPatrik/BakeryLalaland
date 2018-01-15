@@ -11,18 +11,19 @@
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="10"/>
-            <RowDefinition Height="0.75*"/>
+            <RowDefinition Height="0.4*"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         
-        <Image Grid.Column="1" Grid.Row="1" Stretch="UniformToFill"  Source="../Assets/MenuCover.jpg"/>
+        <Image Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Stretch="Fill" Source="../Assets/MenuCover2.jpg"/>
         
         <StackPanel Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" Orientation="Horizontal" Spacing="10">
             <Button Content="Muffins" FontSize="20" FontFamily="Baskerville Old Face" Background="White" BorderThickness="3" BorderBrush="Black"/>
@@ -33,6 +34,65 @@
             <Button Content="Sandwiches" FontSize="20" FontFamily="Baskerville Old Face" Background="White" BorderThickness="3" BorderBrush="Black"/>
             <Button Content="Beverages" FontSize="20" FontFamily="Baskerville Old Face" Background="White" BorderThickness="3" BorderBrush="Black"/>
         </StackPanel>
+
+        <StackPanel Grid.Column="2" Grid.Row="2" HorizontalAlignment="Right" Orientation="Horizontal">
+            <Button Background="White">
+                <StackPanel Orientation="Horizontal" Spacing="10">
+                    <Image Source="../Assets/ProfileIcon.png" Height="30"/>
+                    <TextBlock Text="Profile" FontSize="20"/>
+                </StackPanel>
+            </Button>
+            <Button Background="White">
+                <StackPanel Orientation="Horizontal" Spacing="10">
+                    <Image Source="../Assets/CartIcon.png" Height="30"/>
+                    <TextBlock Text="Cart" FontSize="20"/>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        <!--<StackPanel Height="520"
+                    VerticalAlignment="Top"
+                    Orientation="Vertical" 
+                    HorizontalAlignment="Stretch"
+                    Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3">
+            
+            <ListView x:Name="Menu" 
+                  HorizontalAlignment="Stretch" 
+                  ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                  ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                  ScrollViewer.HorizontalScrollMode="Enabled"                  
+                  ScrollViewer.VerticalScrollMode="Disabled" 
+                  Visibility="Visible"  
+                  IsItemClickEnabled="True"
+                  ItemClick="List_OnItemClick">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>-->
+                    <StackPanel Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3"
+                                Margin="0,20,0,10" 
+                                Orientation="Vertical"
+                                HorizontalAlignment="Stretch" 
+                                Width="250" 
+                                VerticalAlignment="Stretch"
+                                Height="395"
+                                Spacing="5">
+                          <Image Source="../Assets/1.jpg"  Height="250" Width="250" Stretch="Fill" />
+                          <TextBlock Text="Fruit tarte" 
+                                    FontWeight="Bold" VerticalAlignment="Top"
+                                     HorizontalAlignment="Center" FontSize="22"/>
+                        <TextBlock Text="Blueberries, raspberries, strawberries, blackberries" TextWrapping="Wrap" Margin="0,0,0,10"/>
+                          <Button Content="Order" HorizontalAlignment="Center" FontSize="25" Width="250" Foreground="Black"/>
+                      
+                    </StackPanel>
+                <!--</DataTemplate>
+            </ListView.ItemTemplate>
+          </ListView>
+        </StackPanel>-->
 
     </Grid>
 </Page>
