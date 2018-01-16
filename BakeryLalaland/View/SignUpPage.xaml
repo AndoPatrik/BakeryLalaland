@@ -28,7 +28,7 @@
         </Grid.RowDefinitions>
         
         <TextBlock Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Text="Sign up" FontSize="100" FontWeight="ExtraLight"  HorizontalAlignment="Center"/>
-        <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Vertical" Spacing="28" HorizontalAlignment="Right">
+        <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Vertical" HorizontalAlignment="Right">
            <TextBlock Text="Full name:" FontSize="25"/>
             <TextBlock Text="ID:" FontSize="25"/>
             <TextBlock Text="Password:" FontSize="25"/>
@@ -39,7 +39,7 @@
             <TextBlock Text="Postal code:" FontSize="25"/>
             <TextBlock Text="Telephone number:" FontSize="25"/>
         </StackPanel>
-        <StackPanel Grid.Column="2" Grid.Row="3" Orientation="Vertical" Spacing="15" HorizontalAlignment="Left" Margin="15,0,0,0">
+        <StackPanel Grid.Column="2" Grid.Row="3" Orientation="Vertical" HorizontalAlignment="Left" Margin="15,0,0,0">
             <TextBox PlaceholderText="Enter your full name" FontSize="25"/>
             <TextBox PlaceholderText="Enter a user name" FontSize="25"/>
             <TextBox PlaceholderText="Enter a password" FontSize="25"/>
