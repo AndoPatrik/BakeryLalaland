@@ -7,7 +7,36 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid >
+        <Grid.Background>
+            <ImageBrush ImageSource="ms-appx:///Assets/MainPageBackground.jpg" Opacity="0.8"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,10,10" BorderThickness="1" BorderBrush="Sienna">
+            <StackPanel.Background>
+               <SolidColorBrush>
+                    <SolidColorBrush.Color>SaddleBrown</SolidColorBrush.Color>
+                    <SolidColorBrush.Opacity>0.25</SolidColorBrush.Opacity>
+                </SolidColorBrush>
+            </StackPanel.Background>
+            <TextBlock Text="Bakery Land" FontFamily="Baskerville Old Face" FontSize="70" FontWeight="Light" Margin="0,0,0,30"/>
+            <TextBlock Text="User name:" FontSize="25"/>
+            <TextBox PlaceholderText="Enter your user name"  Margin="0,10,0,10" Background="Tan" BorderBrush="Sienna"/>
+            <TextBlock Text="Password:" FontSize="25"/>
+            <TextBox PlaceholderText="Enter your password"  Margin="0,10,0,30" Background="Tan" BorderBrush="Sienna"/>
+            <Button Content="Log in" HorizontalAlignment="Center" Margin="0,10,0,0" Width="360" BorderThickness="3" BorderBrush="Sienna" Background="Tan"/>
+            <Button Content="Sign up" HorizontalAlignment="Center" Margin="0,10,0,30" Width="360" BorderThickness="3" BorderBrush="Sienna" Background="Tan"/>
+        </StackPanel>
 
     </Grid>
 </Page>
