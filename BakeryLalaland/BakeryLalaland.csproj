@@ -108,6 +108,9 @@
     <Compile Include="View\MenuPage.xaml.cs">
       <DependentUpon>MenuPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\SignUpPage.xaml.cs">
+      <DependentUpon>SignUpPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -121,6 +124,9 @@
     <Content Include="Assets\MenuCover.jpg" />
     <Content Include="Assets\MenuCover2.jpg" />
     <Content Include="Assets\ProfileIcon.png" />
+    <Content Include="Assets\SignUpBackground.jpg" />
+    <Content Include="Assets\SignUpBackground2.jpg" />
+    <Content Include="Assets\SignUpBackground3.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -140,6 +146,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\MenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SignUpPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
