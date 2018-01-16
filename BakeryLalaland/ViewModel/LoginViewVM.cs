@@ -24,6 +24,7 @@ namespace BakeryLalaland.ViewModel
         //Constructor(s)
         public LoginViewVM()
         {
+            CurrentCustomer = new Customer();
             // Here we should load the json thing
             try
             {
