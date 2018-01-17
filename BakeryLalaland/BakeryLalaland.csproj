@@ -97,6 +97,7 @@
     </Compile>
     <Compile Include="Interfaces\NotifyPropertyClass.cs" />
     <Compile Include="Interfaces\RelayCommand.cs" />
+    <Compile Include="Persistancy\GetItem.cs" />
     <Compile Include="ViewModel\FrameNavigationClass.cs" />
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>

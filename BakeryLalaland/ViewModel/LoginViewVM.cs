@@ -10,6 +10,7 @@ using Windows.UI.Popups;
 using Windows.UI.Xaml.Controls;
 using BakeryLalaland.Interfaces;
 using BakeryLalaland.Model;
+using BakeryLalaland.Persistancy;
 
 namespace BakeryLalaland.ViewModel
 {
@@ -18,6 +19,7 @@ namespace BakeryLalaland.ViewModel
         //Instance Fields
         private ObservableCollection<Customer> _customers;
         private Customer _currentCustomer;
+        private readonly GetItem _getCustomer;
 
         //Props
         public RelayCommand CheckCommand { get; set; }
@@ -38,25 +40,17 @@ namespace BakeryLalaland.ViewModel
         {
             CurrentCustomer = new Customer();
             CheckCommand = new RelayCommand(Check);
-            try
-            {
-                // Here we should load the json thing
-                _customers = new ObservableCollection<Customer>()
-                {
-                    new Customer("John" , "john","xxx","Coppenhagen","Robert Jackobsonvej", 77 , 2220 , 50607280 )                
-                };
-            }
-            catch (Exception e)
-            {
-                // Handle
-            }
+
+            LoadCustomers();
 
             _currentCustomer = new Customer();
+            _getCustomer = new GetItem();
         }
 
         public void Check()
         {
             LoginStatus = false;
+            LoadCustomers();
             if (Customers != null)
             {
                 foreach (Customer customer in Customers)
@@ -87,6 +81,20 @@ namespace BakeryLalaland.ViewModel
             }
         }
 
-        //loading method from json
+        //Loading customers from json
+        public async void LoadCustomers()
+        {
+            try
+            {
+                Customers = await _getCustomer.LoadFromJson();
+            }
+            catch (Exception e)
+            {
+                _customers = new ObservableCollection<Customer>()
+                {
+                    new Customer("John" , "john","xxx","Coppenhagen","Robert Jackobsonvej", 77 , 2220 , 50607280 )
+                };
+            }
+        }
     }
 }
