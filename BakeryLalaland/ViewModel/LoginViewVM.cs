@@ -10,6 +10,7 @@ using Windows.UI.Popups;
 using Windows.UI.Xaml.Controls;
 using BakeryLalaland.Interfaces;
 using BakeryLalaland.Model;
+using BakeryLalaland.View;
 
 namespace BakeryLalaland.ViewModel
 {
@@ -18,11 +19,13 @@ namespace BakeryLalaland.ViewModel
         //Instance Fields
         private ObservableCollection<Customer> _customers;
         private Customer _currentCustomer;
+        private FrameNavigationClass FrameNavigation;
 
         //Props
         public RelayCommand CheckCommand { get; set; }
         public ObservableCollection<Customer> Customers { get => _customers; set => _customers = value; }
         public  bool LoginStatus { get; set; }
+
         public Customer CurrentCustomer
         {
             get => _currentCustomer;
@@ -38,6 +41,8 @@ namespace BakeryLalaland.ViewModel
         {
             CurrentCustomer = new Customer();
             CheckCommand = new RelayCommand(Check);
+            _currentCustomer = new Customer();
+            FrameNavigation = new FrameNavigationClass();
             try
             {
                 // Here we should load the json thing
@@ -49,11 +54,10 @@ namespace BakeryLalaland.ViewModel
             catch (Exception e)
             {
                 // Handle
-            }
-
-            _currentCustomer = new Customer();
+            } 
         }
 
+        //Methods
         public void Check()
         {
             LoginStatus = false;
@@ -64,7 +68,7 @@ namespace BakeryLalaland.ViewModel
                     if (customer.Id == CurrentCustomer.Id && customer.Password == CurrentCustomer.Password)
                     {
                         LoginStatus = true;
-                        //frame navigation
+                        FrameNavigation.ActivateFrameNavigation(typeof(MenuPage));
                         MessageDialog msd = new MessageDialog("Hello","Login works for user");
                         msd.ShowAsync();
                         break;
@@ -86,7 +90,6 @@ namespace BakeryLalaland.ViewModel
                 }
             }
         }
-
         //loading method from json
     }
 }
