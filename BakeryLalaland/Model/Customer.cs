@@ -13,6 +13,7 @@ namespace BakeryLalaland.Model
         private string _name;
         private string _id;
         private string _password;
+        private string _confirmPassword;
         private string _city;
         private string _street;      
         private int _number;
@@ -22,6 +23,7 @@ namespace BakeryLalaland.Model
         public string Name { get => _name; set => _name = value; }
         public string Id { get => _id; set => _id = value; }
         public string Password { get => _password; set => _password = value; }
+        public string ConfirmPassword { get => _confirmPassword; set => _confirmPassword = value;}
         public string City { get => _city; set => _city = value; }
         public string Street { get => _street; set => _street = value; }
         public int Number { get => _number; set => _number = value; }
@@ -33,11 +35,12 @@ namespace BakeryLalaland.Model
 
         }
 
-        public Customer(string name, string id, string password, string city, string street, int number, int postalCode, int phoneNumber)
+        public Customer(string name, string id, string password, string confirmPassword, string city, string street, int number, int postalCode, int phoneNumber)
         {
             _name = name;
             _id = id;
             _password = password;
+            _confirmPassword = confirmPassword;
             _city = city;
             _street = street;
             _number = number;
@@ -47,7 +50,7 @@ namespace BakeryLalaland.Model
 
         public override string ToString()
         {
-            return $"{Name}{Id}{Password}{City}{Street}{Number}{PostalCode}{PhoneNumber}";
+            return $"{Name}{Id}{Password}{ConfirmPassword}{City}{Street}{Number}{PostalCode}{PhoneNumber}";
         }
     }
 }

@@ -21,7 +21,7 @@ namespace BakeryLalaland.Persistancy
         public async Task SavetoJson(ObservableCollection<Customer> customers)
         {
             var localFolder = ApplicationData.Current.LocalFolder;
-            var jsonFile = await localFolder.CreateFileAsync("customers.txt", CreationCollisionOption.ReplaceExisting);
+            var jsonFile = await localFolder.CreateFileAsync("Customers.txt", CreationCollisionOption.ReplaceExisting);
             var jsonSerializer = new DataContractJsonSerializer(typeof(ObservableCollection<Customer>));
             using (var stream = await jsonFile.OpenStreamForWriteAsync())
             {
@@ -33,7 +33,7 @@ namespace BakeryLalaland.Persistancy
         public async Task<ObservableCollection<Customer>> LoadFromJson()
         {
             var localFolder = ApplicationData.Current.LocalFolder;
-            var jsonFile = await localFolder.GetFileAsync("customers.txt");
+            var jsonFile = await localFolder.GetFileAsync("Customers.txt");
             var jsonSerializer = new DataContractJsonSerializer(typeof(ObservableCollection<Customer>));
             using (var stream = await jsonFile.OpenStreamForReadAsync())
             {

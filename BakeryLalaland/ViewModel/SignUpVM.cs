@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Popups;
 using BakeryLalaland.Interfaces;
 using BakeryLalaland.Model;
 using BakeryLalaland.Persistancy;
@@ -42,9 +43,17 @@ namespace BakeryLalaland.ViewModel
 
         public async void DoAddItem()
         {
-            CustomersCatalogVm.Add(AddNewCustomer);
-            await _getMembers.SavetoJson(CustomersCatalogVm);
-            _frameNavigation.ActivateFrameNavigation(typeof(MainPage));
+            if (AddNewCustomer.Password == AddNewCustomer.ConfirmPassword)
+            {
+                CustomersCatalogVm.Add(AddNewCustomer);
+                await _getMembers.SavetoJson(CustomersCatalogVm);
+                _frameNavigation.ActivateFrameNavigation(typeof(MainPage));
+            }
+            else
+            {
+                MessageDialog msd = new MessageDialog("password incorrect", "error");
+                msd.ShowAsync();
+            }
         }
     }
 }
