@@ -46,7 +46,7 @@ namespace BakeryLalaland.ViewModel
             CheckCommand = new RelayCommand(Check);
             _currentCustomer = new Customer();
             FrameNavigation = new FrameNavigationClass();
-            LoadCustomers();
+            //LoadCustomers();
             _currentCustomer = new Customer();
             _getCustomer = new GetItem();
         }
@@ -99,6 +99,8 @@ namespace BakeryLalaland.ViewModel
                 {
                     new Customer("John" , "john","xxx","Coppenhagen","Robert Jackobsonvej", 77 , 2220 , 50607280 )
                 };
+                await _getCustomer.SavetoJson(Customers);
+                
             }
         }
     }

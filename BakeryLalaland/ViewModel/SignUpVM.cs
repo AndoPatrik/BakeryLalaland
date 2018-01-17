@@ -8,5 +8,6 @@ namespace BakeryLalaland.ViewModel
 {
     class SignUpVM
     {
+
     }
 }
