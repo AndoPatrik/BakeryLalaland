@@ -97,7 +97,7 @@ namespace BakeryLalaland.ViewModel
             {
                 _customers = new ObservableCollection<Customer>()
                 {
-                    new Customer("John" , "john","xxx","Coppenhagen","Robert Jackobsonvej", 77 , 2220 , 50607280 )
+                    new Customer("John" , "john","xxx","xxx","Coppenhagen","Robert Jackobsonvej", 77 , 2220 , 50607280 )
                 };
                 await _getCustomer.SavetoJson(Customers);
             }

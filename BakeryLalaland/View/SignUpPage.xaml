@@ -49,7 +49,7 @@
             <TextBox Text="{Binding AddNewCustomer.Name, Mode=TwoWay}" PlaceholderText="Enter your full name" FontSize="25" Margin="0,10,0,0"/>
             <TextBox Text="{Binding AddNewCustomer.Id, Mode=TwoWay}" PlaceholderText="Enter a user name" FontSize="25" Margin="0,10,0,0"/>
             <TextBox Text="{Binding AddNewCustomer.Password, Mode=TwoWay}" PlaceholderText="Enter a password" FontSize="25" Margin="0,10,0,0"/>
-            <TextBox PlaceholderText="Repeat your password" FontSize="25" Margin="0,10,0,0"/>
+            <TextBox Text="{Binding AddNewCustomer.ConfirmPassword, Mode=TwoWay}" PlaceholderText="Repeat your password" FontSize="25" Margin="0,10,0,0"/>
             <TextBox Text="{Binding AddNewCustomer.Street, Mode=TwoWay}" PlaceholderText="Enter street name" FontSize="25" Margin="0,10,0,0"/>
             <TextBox Text="{Binding AddNewCustomer.Number, Mode=TwoWay}" PlaceholderText="Enter street number" FontSize="25" Margin="0,10,0,0"/>
             <TextBox Text="{Binding AddNewCustomer.City, Mode=TwoWay}" PlaceholderText="Enter city" FontSize="25" Margin="0,10,0,0"/>
