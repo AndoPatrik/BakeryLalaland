@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BakeryLalaland.Model
 {
-    class Customer
+    public class Customer
     {
 
         private string _name;
@@ -29,7 +30,7 @@ namespace BakeryLalaland.Model
 
         public Customer()
         {
-            
+
         }
 
         public Customer(string name, string id, string password, string city, string street, int number, int postalCode, int phoneNumber)
@@ -42,6 +43,11 @@ namespace BakeryLalaland.Model
             _number = number;
             _postalCode = postalCode;
             _phoneNumber = phoneNumber;
+        }
+
+        public override string ToString()
+        {
+            return $"{Name}{Id}{Password}{City}{Street}{Number}{PostalCode}{PhoneNumber}";
         }
     }
 }
