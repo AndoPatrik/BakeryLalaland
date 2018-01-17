@@ -36,6 +36,8 @@ namespace BakeryLalaland.ViewModel
             {
                 // Handle
             }
+
+            _currentCustomer = new Customer();
         }
 
         public void Check()
