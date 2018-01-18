@@ -69,7 +69,7 @@ namespace BakeryLalaland.ViewModel
         {
             try
             {
-                DrinkCatalog = await _getDrinks.LoadFromJson();
+                DrinkCatalog = await _getDrinks.LoadMenuFromJson();
             }
             catch (Exception e)
             {

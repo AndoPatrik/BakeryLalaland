@@ -31,7 +31,7 @@ namespace BakeryLalaland.Persistency
         }
 
         //retriving from the file
-        public async Task<ObservableCollection<MenuCart>> LoadFromJson()
+        public async Task<ObservableCollection<MenuCart>> LoadMenuFromJson()
         {
             var localFolder = ApplicationData.Current.LocalFolder;
             var jsonFile = await localFolder.GetFileAsync("MenuCartFile2.txt");
