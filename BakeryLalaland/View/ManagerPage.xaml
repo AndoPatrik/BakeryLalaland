@@ -1,0 +1,102 @@
+﻿<Page
+    x:Class="BakeryLalaland.View.ManagerPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BakeryLalaland.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:bakeryLalaland="using:BakeryLalaland"
+    xmlns:viewModel="using:BakeryLalaland.ViewModel"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid.DataContext>
+            <viewModel:SerializeDrinksVm />
+        </Grid.DataContext>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="8*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        
+        <GridView Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center"
+                  VerticalAlignment="Top" Width="1400" 
+                  ItemsSource="{Binding DrinkCatalog}"
+                  SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" Width="160" Height="190" Margin="5,0,5,0" BorderThickness="2" BorderBrush="Black">
+                        <Image x:Name="Image" Source="{Binding Image, Mode=TwoWay}" Height="100" Width="130" Stretch="UniformToFill" Margin="5"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock x:Name="Number" Text="{Binding Number, Mode=TwoWay}" FontSize="13" Margin="0,5,0,5" />
+                            <TextBlock x:Name="Name" Text="{Binding Name, Mode=TwoWay}" FontSize="15" Margin="5" />
+                        </StackPanel>
+                        <TextBlock x:Name="Category" Text="{Binding Categoryy, Mode=TwoWay}" FontSize="10" HorizontalAlignment="Center" />
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock x:Name="Price" Text="{Binding Price, Mode=TwoWay}" FontSize="15" Margin="5" />
+                            <TextBlock x:Name="Currency" Text="DKK" FontSize="15" Margin="0,5,0,5"/>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+
+       
+                <StackPanel  Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" Orientation="Horizontal">
+                    
+                    <TextBox PlaceholderText="Enter name" Text="{Binding AddNewDrink.Name, Mode=TwoWay}"
+                             FontSize="18" Width="150" Height="40" HorizontalAlignment="Center" Margin="5"/>
+                    <TextBox PlaceholderText="Enter id" Text="{Binding AddNewDrink.Number, Mode=TwoWay}"
+                             FontSize="18" Width="80" Height="40" HorizontalAlignment="Center" Margin="5"/>
+                    <TextBox PlaceholderText="Enter price" Text="{Binding AddNewDrink.Price, Mode=TwoWay}"
+                             FontSize="18" Width="80" Height="40" HorizontalAlignment="Center" Margin="5"/>
+                    <TextBox PlaceholderText="Enter an image" Text="{Binding AddNewDrink.Image, Mode=TwoWay}"
+                             FontSize="18" Width="150" Height="40" HorizontalAlignment="Center" Margin="5"/>
+                    <ComboBox ItemsSource="{Binding MenuItemsCategories}" SelectedValue="{Binding AddNewDrink.Categoryy, Mode=TwoWay}" Margin="5,29,5,0" Height="40" Width="120"/>
+            <TextBox PlaceholderText="Enter the ingredients" Text="{Binding AddNewDrink.Ingred, Mode=TwoWay}"
+                     FontSize="18" Width="350" Height="40" HorizontalAlignment="Center" Margin="5"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                      <Button Content="ADD" Command="{Binding AddItemCommand}" 
+                            FontSize="15" Width="100" Height="35" Margin="10"
+                            VerticalAlignment="Center" HorizontalAlignment="Center"
+                            Background="Sienna"  Foreground="White"/>
+                      <Button Content="DELETE" Command="{Binding DeleteItemCommand}" 
+                            FontSize="15" Width="100" Height="35" 
+                            HorizontalAlignment="Center"
+                            Background="Sienna"  Foreground="White"/>
+                    </StackPanel>
+                </StackPanel>
+
+        <StackPanel  Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" Orientation="Horizontal">
+            <TextBox PlaceholderText="Enter name" Text="{Binding SelectedItem.Name, Mode=TwoWay}"
+                     FontSize="18" Width="150" Height="40" HorizontalAlignment="Center" Margin="5"/>
+            <TextBox PlaceholderText="Enter id" Text="{Binding SelectedItem.Number, Mode=TwoWay}"
+                     FontSize="18" Width="80" Height="40" HorizontalAlignment="Center" Margin="5"/>
+            <TextBox PlaceholderText="Enter price" Text="{Binding SelectedItem.Price, Mode=TwoWay}"
+                     FontSize="18" Width="80" Height="40" HorizontalAlignment="Center" Margin="5"/>
+            <TextBox PlaceholderText="Enter an image" Text="{Binding SelectedItem.Image, Mode=TwoWay}"
+                     FontSize="18" Width="150" Height="40" HorizontalAlignment="Center" Margin="5"/>
+            <ComboBox ItemsSource="{Binding MenuItemsCategories}" SelectedValue="{Binding SelectedItem.Categoryy, Mode=TwoWay}" Margin="5,29,5,0" Height="40" Width="120"/>
+            <TextBox PlaceholderText="Enter an image" Text="{Binding SelectedItem.Ingred, Mode=TwoWay}"
+                     FontSize="18" Width="350" Height="40" HorizontalAlignment="Center" Margin="5"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="UPDATE" Command="{Binding UpdateItemCommand}" 
+                        FontSize="15" Width="205" Height="35" Margin="10"
+                        VerticalAlignment="Center" HorizontalAlignment="Center"
+                        Background="Sienna"  Foreground="White"/>
+            </StackPanel>
+        </StackPanel>
+
+
+    </Grid>
+</Page>

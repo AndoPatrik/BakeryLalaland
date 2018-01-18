@@ -95,24 +95,23 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\FrameNavigationClass.cs" />
     <Compile Include="Interfaces\NotifyPropertyClass.cs" />
     <Compile Include="Interfaces\RelayCommand.cs" />
-    <Compile Include="Persistancy\GetItem.cs" />
+    <Compile Include="Persistency\GetItem.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="ViewModel\SerializeDrinksVm.cs" />
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Customer.cs" />
-    <Compile Include="Model\Drink.cs" />
+    <Compile Include="Model\MenuCart.cs" />
     <Compile Include="Model\Food.cs" />
     <Compile Include="Model\Manager.cs" />
     <Compile Include="Model\Menu.cs" />
     <Compile Include="Model\Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModel\LoginViewVM.cs" />
-    <Compile Include="ViewModel\SignUpVM.cs" />
-    <Compile Include="View\CurrentOrders.xaml.cs">
-      <DependentUpon>CurrentOrders.xaml</DependentUpon>
+    <Compile Include="View\ManagerPage.xaml.cs">
+      <DependentUpon>ManagerPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MenuPage.xaml.cs">
       <DependentUpon>MenuPage.xaml</DependentUpon>
@@ -128,7 +127,14 @@
     <None Include="BakeryLalaland_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\001.jpg" />
+    <Content Include="Assets\002.jpg" />
+    <Content Include="Assets\003.jpg" />
     <Content Include="Assets\1.jpg" />
+    <Content Include="Assets\101.jpg" />
+    <Content Include="Assets\201.jpg" />
+    <Content Include="Assets\301.jpg" />
+    <Content Include="Assets\401.jpg" />
     <Content Include="Assets\CartIcon.png" />
     <Content Include="Assets\MainPageBackground.jpg" />
     <Content Include="Assets\MainPageBackground2.jpg" />
@@ -156,7 +162,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\CurrentOrders.xaml">
+    <Page Include="View\ManagerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -169,12 +175,12 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>6.0.6</Version>
+      <Version>6.0.4</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
