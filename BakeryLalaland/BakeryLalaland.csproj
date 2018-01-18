@@ -100,6 +100,7 @@
     <Compile Include="Interfaces\RelayCommand.cs" />
     <Compile Include="Persistency\GetItem.cs" />
     <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="ViewModel\LoginViewVM.cs" />
     <Compile Include="ViewModel\SerializeDrinksVm.cs" />
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>

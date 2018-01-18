@@ -2,17 +2,13 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Reflection.Metadata;
-using System.ServiceModel.Channels;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Popups;
-using Windows.UI.Xaml.Controls;
 using BakeryLalaland.Interfaces;
 using BakeryLalaland.Model;
+using BakeryLalaland.Persistency;
 using BakeryLalaland.View;
-using BakeryLalaland.Persistancy;
-
 
 namespace BakeryLalaland.ViewModel
 {
@@ -27,7 +23,7 @@ namespace BakeryLalaland.ViewModel
         //Props
         public RelayCommand CheckCommand { get; set; }
         public ObservableCollection<Customer> Customers { get => _customers; set => _customers = value; }
-        public  bool LoginStatus { get; set; }
+        public bool LoginStatus { get; set; }
 
         public Customer CurrentCustomer
         {
@@ -64,12 +60,12 @@ namespace BakeryLalaland.ViewModel
                     {
                         LoginStatus = true;
                         FrameNavigation.ActivateFrameNavigation(typeof(MenuPage));
-                        MessageDialog msd = new MessageDialog("Hello","Login works for user");
+                        MessageDialog msd = new MessageDialog("Hello", "Login works for user");
                         msd.ShowAsync();
                         break;
                     }
                     //It pointed the customer.Id instead of the CurrentCustomer.Id
-                    else if (CurrentCustomer.Id == "coffee" && CurrentCustomer.Password=="milk")
+                    else if (CurrentCustomer.Id == "coffee" && CurrentCustomer.Password == "milk")
                     {
                         LoginStatus = true;
                         //frame navigation
