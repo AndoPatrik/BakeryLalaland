@@ -68,7 +68,7 @@ namespace BakeryLalaland.ViewModel
                     else if (CurrentCustomer.Id == "coffee" && CurrentCustomer.Password == "milk")
                     {
                         LoginStatus = true;
-                        //frame navigation
+                        FrameNavigation.ActivateFrameNavigation(typeof(ManagerPage));
                         MessageDialog msd = new MessageDialog("Hello", "Login works admin");
                         msd.ShowAsync();
                         break;
