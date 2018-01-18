@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Windows.UI.Popups;
 using BakeryLalaland.Interfaces;
 using BakeryLalaland.Model;
-using BakeryLalaland.Persistancy;
+using BakeryLalaland.Persistency;
 
 namespace BakeryLalaland.ViewModel
 {
@@ -31,7 +31,7 @@ namespace BakeryLalaland.ViewModel
                 OnPropertyChanged(nameof(CustomersCatalogVm));
             }
         }
-        
+
         public SignUpVM()
         {
             _getMembers = new GetItem();
