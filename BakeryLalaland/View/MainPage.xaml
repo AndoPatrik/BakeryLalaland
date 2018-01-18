@@ -34,7 +34,7 @@
             <TextBox PlaceholderText="Enter your user name"  Margin="0,10,0,10" Background="Tan" BorderBrush="Sienna"/>
             <TextBlock Text="Password:" FontSize="25"/>
             <TextBox PlaceholderText="Enter your password"  Margin="0,10,0,30" Background="Tan" BorderBrush="Sienna"/>
-            <Button Content="Log in" HorizontalAlignment="Center" Margin="0,10,0,0" Width="360" BorderThickness="3" BorderBrush="Sienna" Background="Tan"/>
+            <Button Content="Log in" HorizontalAlignment="Center" Margin="0,10,0,0" Width="360" BorderThickness="3" BorderBrush="Sienna" Background="Tan" Click="Button_Click_1"/>
             <Button Content="Sign up" HorizontalAlignment="Center" Margin="0,10,0,30" Width="360" BorderThickness="3" BorderBrush="Sienna" Background="Tan" Click="Button_Click"/>
         </StackPanel>
 
