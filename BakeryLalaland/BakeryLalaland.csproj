@@ -95,24 +95,37 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Interfaces\FrameNavigationClass.cs" />
     <Compile Include="Interfaces\NotifyPropertyClass.cs" />
     <Compile Include="Interfaces\RelayCommand.cs" />
     <Compile Include="Persistancy\GetItem.cs" />
+=======
+    <Compile Include="Interfaces\NotifyPropertyClass.cs" />
+    <Compile Include="Interfaces\RelayCommand.cs" />
+    <Compile Include="Persistency\GetItem.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="ViewModel\SerializeDrinksVm.cs" />
+>>>>>>> e4e9b2e7650db5d63c21f99456b14ea9e94ad185
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Customer.cs" />
-    <Compile Include="Model\Drink.cs" />
+    <Compile Include="Model\MenuCart.cs" />
     <Compile Include="Model\Food.cs" />
     <Compile Include="Model\Manager.cs" />
     <Compile Include="Model\Menu.cs" />
     <Compile Include="Model\Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <Compile Include="ViewModel\LoginViewVM.cs" />
     <Compile Include="ViewModel\SignUpVM.cs" />
     <Compile Include="View\CurrentOrders.xaml.cs">
       <DependentUpon>CurrentOrders.xaml</DependentUpon>
+=======
+    <Compile Include="View\ManagerPage.xaml.cs">
+      <DependentUpon>ManagerPage.xaml</DependentUpon>
+>>>>>>> e4e9b2e7650db5d63c21f99456b14ea9e94ad185
     </Compile>
     <Compile Include="View\MenuPage.xaml.cs">
       <DependentUpon>MenuPage.xaml</DependentUpon>
@@ -128,7 +141,14 @@
     <None Include="BakeryLalaland_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\001.jpg" />
+    <Content Include="Assets\002.jpg" />
+    <Content Include="Assets\003.jpg" />
     <Content Include="Assets\1.jpg" />
+    <Content Include="Assets\101.jpg" />
+    <Content Include="Assets\201.jpg" />
+    <Content Include="Assets\301.jpg" />
+    <Content Include="Assets\401.jpg" />
     <Content Include="Assets\CartIcon.png" />
     <Content Include="Assets\MainPageBackground.jpg" />
     <Content Include="Assets\MainPageBackground2.jpg" />
@@ -156,7 +176,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+<<<<<<< HEAD
     <Page Include="View\CurrentOrders.xaml">
+=======
+    <Page Include="View\ManagerPage.xaml">
+>>>>>>> e4e9b2e7650db5d63c21f99456b14ea9e94ad185
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -175,6 +199,10 @@
       <Version>6.0.6</Version>
     </PackageReference>
   </ItemGroup>
+<<<<<<< HEAD
+=======
+  <ItemGroup />
+>>>>>>> e4e9b2e7650db5d63c21f99456b14ea9e94ad185
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

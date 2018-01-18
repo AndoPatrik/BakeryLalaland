@@ -7,7 +7,11 @@ using System.Windows.Input;
 
 namespace BakeryLalaland.Interfaces
 {
+<<<<<<< HEAD
     public class RelayCommand : ICommand
+=======
+    class RelayCommand : ICommand
+>>>>>>> e4e9b2e7650db5d63c21f99456b14ea9e94ad185
     {
         private readonly Action _execute;
         private readonly Func<bool> _canExecute;

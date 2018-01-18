@@ -12,30 +12,23 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using BakeryLalaland.View;
+using BakeryLalaland.Model;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace BakeryLalaland
+namespace BakeryLalaland.View
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class ManagerPage : Page
     {
-        public MainPage()
+        public ManagerPage()
         {
             this.InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(MenuPage));
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(ManagerPage));
+            //var _enumval = Enum.GetValues(typeof(MenuCart.Category)).Cast<MenuCart.Category>();
+            //CategoryComboBox.ItemsSource = _enumval.ToList();
+            //this.DataContext = new MenuCart();
         }
     }
 }
