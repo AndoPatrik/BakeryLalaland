@@ -103,6 +103,9 @@
     <Compile Include="ViewModel\LoginViewVM.cs" />
     <Compile Include="ViewModel\SerializeDrinksVm.cs" />
     <Compile Include="ViewModel\SignUpVM.cs" />
+    <Compile Include="View\CurrentOrder.xaml.cs">
+      <DependentUpon>CurrentOrder.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -161,6 +164,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\CurrentOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
