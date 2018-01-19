@@ -101,6 +101,7 @@
     <Compile Include="Persistency\GetItem.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModel\LoginViewVM.cs" />
+    <Compile Include="ViewModel\ManagingUsersVM.cs" />
     <Compile Include="ViewModel\SerializeDrinksVm.cs" />
     <Compile Include="ViewModel\SignUpVM.cs" />
     <Compile Include="View\CurrentOrder.xaml.cs">
@@ -118,6 +119,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\ManagerPage.xaml.cs">
       <DependentUpon>ManagerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManagingUsersPage.xaml.cs">
+      <DependentUpon>ManagingUsersPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MenuPage.xaml.cs">
       <DependentUpon>MenuPage.xaml</DependentUpon>
@@ -173,6 +177,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\ManagerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ManagingUsersPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

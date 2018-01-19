@@ -94,6 +94,10 @@
                         FontSize="15" Width="205" Height="35" Margin="10"
                         VerticalAlignment="Center" HorizontalAlignment="Center"
                         Background="Sienna"  Foreground="White"/>
+                <Button Content="X"
+                        FontSize="15" Width="205" Height="35" Margin="10"
+                        VerticalAlignment="Center" HorizontalAlignment="Center"
+                        Background="Sienna"  Foreground="White" Click="Button_Click"/>
             </StackPanel>
         </StackPanel>
 

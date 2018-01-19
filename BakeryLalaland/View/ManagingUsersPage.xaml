@@ -1,0 +1,76 @@
+﻿<Page
+    x:Class="BakeryLalaland.View.ManagingUsersPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BakeryLalaland.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="using:BakeryLalaland.ViewModel"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid.DataContext>
+            <viewModel:ManagingUsersVM />
+        </Grid.DataContext>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="8*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+
+        <GridView Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center"
+                  VerticalAlignment="Top" Width="1400" 
+                  ItemsSource="{Binding CustomersCatalogManager}"
+                  SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" Width="160" Height="190" Margin="5,0,5,0" BorderThickness="2" BorderBrush="Black">
+                        <TextBlock Text="{Binding Name}" x:Name="Head" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20"/>
+                        <TextBlock Text="{Binding Id}" TextWrapping="Wrap" Margin="0,10,0,10" HorizontalAlignment="Center" Height="50"/>
+                        <TextBlock Text="{Binding Password}" TextWrapping="Wrap" Margin="0,10,0,10" HorizontalAlignment="Center" Height="50"/>
+                        <TextBlock Text="{Binding City}" TextWrapping="Wrap" Margin="0,10,0,10" HorizontalAlignment="Center" Height="50"/>
+                        <TextBlock Text="{Binding Number}" TextWrapping="Wrap" Margin="0,10,0,10" HorizontalAlignment="Center" Height="50"/>
+                        <TextBlock Text="{Binding PostalCode}" TextWrapping="Wrap" Margin="0,10,0,10" HorizontalAlignment="Center" Height="50"/>
+                        <TextBlock Text="{Binding Street}" TextWrapping="Wrap" Margin="0,10,0,10" HorizontalAlignment="Center" Height="50"/>
+                        <TextBlock Text="{Binding PhoneNumber}" TextWrapping="Wrap" Margin="0,10,0,10" HorizontalAlignment="Center" Height="50"/>
+                    </StackPanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+
+        <StackPanel DataContext="{Binding SignUpVM}" Grid.Column="2" Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Left" Margin="15,0,0,0">
+            <TextBox Text="{Binding AddNewCustomer.Name, Mode=TwoWay}" PlaceholderText="Enter your full name" FontSize="25" Margin="0,10,0,0"/>
+            <TextBox Text="{Binding AddNewCustomer.Id, Mode=TwoWay}" PlaceholderText="Enter a user name" FontSize="25" Margin="0,10,0,0"/>
+            <TextBox Text="{Binding AddNewCustomer.Password, Mode=TwoWay}" PlaceholderText="Enter a password" FontSize="25" Margin="0,10,0,0"/>
+            <TextBox Text="{Binding AddNewCustomer.ConfirmPassword, Mode=TwoWay}" PlaceholderText="Repeat your password" FontSize="25" Margin="0,10,0,0"/>
+            <TextBox Text="{Binding AddNewCustomer.Street, Mode=TwoWay}" PlaceholderText="Enter street name" FontSize="25" Margin="0,10,0,0"/>
+            <TextBox Text="{Binding AddNewCustomer.Number, Mode=TwoWay}" PlaceholderText="Enter street number" FontSize="25" Margin="0,10,0,0"/>
+            <TextBox Text="{Binding AddNewCustomer.City, Mode=TwoWay}" PlaceholderText="Enter city" FontSize="25" Margin="0,10,0,0"/>
+            <TextBox Text="{Binding AddNewCustomer.PostalCode, Mode=TwoWay}" PlaceholderText="Enter your postal code" FontSize="25" Margin="0,10,0,0"/>
+            <TextBox Text="{Binding AddNewCustomer.PhoneNumber, Mode=TwoWay}" PlaceholderText="Enter your phone number" FontSize="25" Margin="0,10,0,0"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="ADD" Command="{Binding AddItemCommand}" 
+                        FontSize="15" Width="100" Height="35" Margin="10"
+                        VerticalAlignment="Center" HorizontalAlignment="Center"
+                        Background="Sienna"  Foreground="White"/>
+                <Button Content="DELETE" Command="{Binding DeleteItemCommand}" 
+                        FontSize="15" Width="100" Height="35" 
+                        HorizontalAlignment="Center"
+                        Background="Sienna"  Foreground="White"/>
+            </StackPanel>
+        </StackPanel>
+
+
+    </Grid>
+</Page>
