@@ -11,7 +11,7 @@ using BakeryLalaland.Persistency;
 
 namespace BakeryLalaland.ViewModel
 {
-    class SignUpVM : NotifyPropertyClass
+    public class SignUpVM : NotifyPropertyClass
     {
         //instance fields
         private readonly GetItem _getMembers;
