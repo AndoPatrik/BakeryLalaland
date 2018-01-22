@@ -20,7 +20,7 @@ namespace BakeryLalaland.ViewModel
         public RelayCommand AddItemCommand { get; set; }
         public RelayCommand DeleteItemCommand { get; set; }
         public RelayCommand UpdateItemCommand { get; set; }
-        public Customer AddNewCustomer;
+        public Customer AddNewCustomer { get; set; }
         public LoginViewVM Collection { get; set; }
 
         public ObservableCollection<Customer> CustomersCatalogManager
