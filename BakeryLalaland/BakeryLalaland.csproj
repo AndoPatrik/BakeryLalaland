@@ -103,6 +103,7 @@
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModel\LoginViewVM.cs" />
     <Compile Include="ViewModel\ManagingUsersVM.cs" />
+    <Compile Include="ViewModel\ProfileVM.cs" />
     <Compile Include="ViewModel\SerializeDrinksVm.cs" />
     <Compile Include="ViewModel\SignUpVM.cs" />
     <Compile Include="View\CurrentOrder.xaml.cs">
@@ -126,6 +127,9 @@
     </Compile>
     <Compile Include="View\MenuPage.xaml.cs">
       <DependentUpon>MenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProfileView.xaml.cs">
+      <DependentUpon>ProfileView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SignUpPage.xaml.cs">
       <DependentUpon>SignUpPage.xaml</DependentUpon>
@@ -201,6 +205,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\MenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ProfileView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
