@@ -19,6 +19,7 @@ namespace BakeryLalaland.ViewModel
         private Customer _currentCustomer;
         private FrameNavigationClass FrameNavigation;
         private readonly GetItem _getCustomer;
+        private readonly CurrentUserSingleton _currentUserSingleton;
 
         //Props
         public RelayCommand CheckCommand { get; set; }
@@ -45,6 +46,7 @@ namespace BakeryLalaland.ViewModel
             _currentCustomer = new Customer();
             _getCustomer = new GetItem();
             Customers = new ObservableCollection<Customer>();
+            _currentUserSingleton = CurrentUserSingleton.GetInstance();
         }
 
         //Methods
@@ -58,6 +60,7 @@ namespace BakeryLalaland.ViewModel
                 {
                     if (customer.Id == CurrentCustomer.Id && customer.Password == CurrentCustomer.Password)
                     {
+                        _currentUserSingleton.SetCurrentUser(customer);
                         LoginStatus = true;
                         FrameNavigation.ActivateFrameNavigation(typeof(MenuPage));
                         MessageDialog msd = new MessageDialog("Hello", "Login works for user");
