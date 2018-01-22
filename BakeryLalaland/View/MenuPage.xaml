@@ -99,7 +99,7 @@
                     <TextBlock Text="Profile" FontSize="20"/>
                 </StackPanel>
             </Button>
-            <Button BorderThickness="1" BorderBrush="Black">
+            <Button BorderThickness="1" BorderBrush="Black" Click="Button_Click_2">
                 <StackPanel Orientation="Horizontal" Margin="10,0,10,0">
                     <Image Source="../Assets/CartIcon.png" Height="30" Margin="10,0,10,0"/>
                     <TextBlock Text="Cart" FontSize="20"/>

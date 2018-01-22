@@ -36,5 +36,10 @@ namespace BakeryLalaland.View
         {
             Frame.Navigate(typeof(ProfileView));
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(CurrentOrder));
+        }
     }
 }
