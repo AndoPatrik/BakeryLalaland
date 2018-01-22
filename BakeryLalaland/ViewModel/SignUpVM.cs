@@ -39,6 +39,7 @@ namespace BakeryLalaland.ViewModel
             AddItemCommand = new RelayCommand(DoAddItem);
             Collection = new LoginViewVM();
             _frameNavigation = new FrameNavigationClass();
+            LoadCustomers();
         }
 
         public async void DoAddItem()
@@ -53,6 +54,23 @@ namespace BakeryLalaland.ViewModel
             {
                 MessageDialog msd = new MessageDialog("password incorrect", "error");
                 msd.ShowAsync();
+            }
+        }
+
+        //Loading method
+        public async void LoadCustomers()                                        //serialization
+        {
+            try
+            {
+                CustomersCatalogVm = await _getMembers.LoadFromJson();
+            }
+            catch (Exception e)
+            {
+                foreach (Customer customer in CustomersCatalogVm)
+                {
+                    var drink = customer;
+                }
+                string error = e.Message;
             }
         }
     }
