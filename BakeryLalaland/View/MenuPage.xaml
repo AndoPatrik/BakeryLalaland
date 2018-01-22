@@ -76,7 +76,20 @@
             <Button Content="Beverages" FontSize="20" FontFamily="Baskerville Old Face" Background="White" BorderThickness="3" BorderBrush="Black" Margin="5,0,5,0"/>
         </StackPanel>
 
-        <StackPanel Grid.Column="2" Grid.Row="2" HorizontalAlignment="Right" Orientation="Horizontal">
+        <StackPanel Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" Orientation="Horizontal">
+            <Button Background="White" Click="Button_Click">
+
+                <StackPanel Orientation="Horizontal" Margin="10,0,10,0">
+                    
+                    <TextBlock Text="Back" FontSize="20"/>
+                </StackPanel>
+            </Button>
+            </StackPanel>
+
+
+
+
+            <StackPanel Grid.Column="2" Grid.Row="2" HorizontalAlignment="Right" Orientation="Horizontal">
             <Button Background="White">
 
                 <StackPanel Orientation="Horizontal" Margin="10,0,10,0">
