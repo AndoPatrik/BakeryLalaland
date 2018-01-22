@@ -50,7 +50,7 @@ namespace BakeryLalaland.ViewModel
         }
 
         //Methods
-        public void Check()
+        public async void Check()
         {
             LoginStatus = false;
             LoadCustomers();
@@ -64,7 +64,7 @@ namespace BakeryLalaland.ViewModel
                         LoginStatus = true;
                         FrameNavigation.ActivateFrameNavigation(typeof(MenuPage));
                         MessageDialog msd = new MessageDialog("Hello", "Login works for user");
-                        msd.ShowAsync();
+                        await msd.ShowAsync();
                         break;
                     }
                     //It pointed the customer.Id instead of the CurrentCustomer.Id
@@ -73,14 +73,14 @@ namespace BakeryLalaland.ViewModel
                         LoginStatus = true;
                         FrameNavigation.ActivateFrameNavigation(typeof(ManagerPage));
                         MessageDialog msd = new MessageDialog("Hello", "Login works admin");
-                        msd.ShowAsync();
+                        await msd.ShowAsync();
                         break;
                     }
-                    if (LoginStatus == false)
-                    {
-                        MessageDialog msd = new MessageDialog("Hello", "Insert the correct data");
-                        msd.ShowAsync();
-                    }
+                }
+                if (LoginStatus == false)
+                {
+                    MessageDialog msd = new MessageDialog("Hello", "Insert the correct data");
+                    await msd.ShowAsync();
                 }
             }
         }
