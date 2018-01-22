@@ -67,7 +67,7 @@
         
 
         <StackPanel Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" Orientation="Horizontal" Margin="10,0,10,0">
-            <Button Content="Muffins" FontSize="20" FontFamily="Baskerville Old Face" Background="White" BorderThickness="3" BorderBrush="Black" Margin="5,0,5,0"/>
+            <Button Content="Muffins" FontSize="20" FontFamily="Baskerville Old Face" Background="White" BorderThickness="3" BorderBrush="Black" Margin="5,0,5,0" />
             <Button Content="Cupcakes" FontSize="20" FontFamily="Baskerville Old Face" Background="White" BorderThickness="3" BorderBrush="Black" Margin="5,0,5,0"/>
             <Button Content="Cakes" FontSize="20" FontFamily="Baskerville Old Face" Background="White" BorderThickness="3" BorderBrush="Black" Margin="5,0,5,0"/>
             <Button Content="Healthy desserts" FontSize="20" FontFamily="Baskerville Old Face" Background="White" BorderThickness="3" BorderBrush="Black" Margin="5,0,5,0"/>
@@ -77,11 +77,11 @@
         </StackPanel>
 
         <StackPanel Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" Orientation="Horizontal">
-            <Button Background="White" Click="Button_Click">
+            <Button Background="White" Click="Button_Click" >
 
                 <StackPanel Orientation="Horizontal" Margin="10,0,10,0">
                     
-                    <TextBlock Text="Back" FontSize="20"/>
+                    <TextBlock Text="Back" FontSize="20" Height="27" VerticalAlignment="Top"/>
                 </StackPanel>
             </Button>
             </StackPanel>
