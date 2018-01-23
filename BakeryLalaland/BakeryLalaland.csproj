@@ -95,6 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\CartCollectionSingleton.cs" />
     <Compile Include="Interfaces\CurrentUserSingleton.cs" />
     <Compile Include="Interfaces\FoodSingleton.cs" />
     <Compile Include="Interfaces\FrameNavigationClass.cs" />

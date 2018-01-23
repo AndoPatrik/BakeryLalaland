@@ -115,8 +115,8 @@
                       VerticalAlignment="Top"
                       ItemsSource="{Binding DrinkCatalog}"
                       SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
-                  IsItemClickEnabled="True">
-            <!--ItemClick="List_OnItemClick"-->
+                  IsItemClickEnabled="True" 
+            ItemClick="List_OnItemClick" >
 
             <GridView.ItemTemplate>
                 <DataTemplate>

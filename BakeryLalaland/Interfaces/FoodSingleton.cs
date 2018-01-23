@@ -33,6 +33,11 @@ namespace BakeryLalaland.Interfaces
             _order = order;
         }
 
+        public MenuCart GetCurrentOrder()
+        {
+            return _order;
+        }
+
         public string GetName()
         {
             return _order.Name;
