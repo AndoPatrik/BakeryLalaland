@@ -99,8 +99,8 @@
             </Button>
         </StackPanel>
 
-        <Grid Grid.ColumnSpan="2" Grid.Row="2">
-            <Frame Name="MenuFrame"/>
+        <Grid Grid.ColumnSpan="2" Grid.Row="2" Background="Transparent">
+            <Frame Name="MenuFrame" Background="Transparent"/>
         </Grid>
 
     </Grid>

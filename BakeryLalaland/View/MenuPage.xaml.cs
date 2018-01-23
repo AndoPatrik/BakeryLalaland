@@ -42,7 +42,8 @@ namespace BakeryLalaland.View
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(CurrentOrder));
+            MenuFrame.Navigate(typeof(CurrentOrder));
+            BackButton.Visibility = Visibility.Visible;
         }
     }
 }
