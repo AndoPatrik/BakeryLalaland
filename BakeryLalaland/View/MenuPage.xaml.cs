@@ -25,16 +25,19 @@ namespace BakeryLalaland.View
         public MenuPage()
         {
             this.InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(MainPage));
+            BackButton.Visibility = Visibility.Collapsed;
+            MenuFrame.Navigate(typeof(MenuList));
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(ProfileView));
+            MenuFrame.Navigate(typeof(ProfileView));
+            BackButton.Visibility = Visibility.Visible;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MenuPage));
         }
     }
 }
