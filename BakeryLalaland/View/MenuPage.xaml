@@ -105,6 +105,7 @@
                     <TextBlock Text="Cart" FontSize="20"/>
                 </StackPanel>
             </Button>
+            <TextBlock x:Name="C" Text="{Binding NumberOfOrders , Mode=TwoWay , UpdateSourceTrigger=PropertyChanged}" FontSize=" 20"></TextBlock>
         </StackPanel>
 
 
