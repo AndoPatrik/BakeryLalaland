@@ -34,7 +34,7 @@ namespace BakeryLalaland.View
         {
             this.InitializeComponent();
             BackButton.Visibility = Visibility.Collapsed;
-            //MenuFrame.Navigate(typeof(MenuList));
+            MenuFrame.Navigate(typeof(MenuList));
             _foodSingleton = FoodSingleton.GetInstance();
             _serializeDrinksVm = new SerializeDrinksVm();
             _cartCollectionSingleton = CartCollectionSingleton.GetInstance();
@@ -42,7 +42,6 @@ namespace BakeryLalaland.View
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            MenuGrid.Visibility = Visibility.Collapsed;
             MenuFrame.Navigate(typeof(ProfileView));
             BackButton.Visibility = Visibility.Visible;
         }
@@ -57,8 +56,6 @@ namespace BakeryLalaland.View
             MenuFrame.Navigate(typeof(CurrentOrder));
             BackButton.Visibility = Visibility.Visible;
             _cartCollectionSingleton.SetCartCollection(_serializeDrinksVm.AdToCartList);
-            Frame.Navigate(typeof(CurrentOrder));
-
         }
 
         private void List_OnItemClick(object sender, ItemClickEventArgs e)
@@ -73,7 +70,7 @@ namespace BakeryLalaland.View
             catch (Exception exception)
             {
                 string ex = exception.ToString();
-                MessageDialog msd = new MessageDialog(ex , "error");
+                MessageDialog msd = new MessageDialog(ex, "error");
                 msd.ShowAsync();
             }
 
@@ -81,3 +78,4 @@ namespace BakeryLalaland.View
         }
     }
 }
+
