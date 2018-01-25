@@ -44,7 +44,7 @@ namespace BakeryLalaland.ViewModel
                 OnPropertyChanged(nameof(DrinkCatalog));
             }
         }
-        //Unused
+        
         public MenuCart SelectedItem
         {
             get => _selectedItem;
@@ -55,6 +55,7 @@ namespace BakeryLalaland.ViewModel
             }
         }
 
+        //Constructor
         public SerializeDrinksVm()
         {
             //initializing objects
@@ -77,11 +78,6 @@ namespace BakeryLalaland.ViewModel
             {
                 AdToCartList = _cartCollectionSingleton.GetCartCollection();
             }
-
-            
-            //_foodSingleton.SetCurrentOrder(SelectedItem);
-
-            //Task.Run(() => LoadDrinks());                                //serialization
         }
 
         //Loading method
