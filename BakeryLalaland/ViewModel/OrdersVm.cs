@@ -12,6 +12,7 @@ namespace BakeryLalaland.ViewModel
     class OrdersVm
     {
         private ObservableCollection<MenuCart> _cartCollection;
+        private int x;
 
         private CartCollectionSingleton _cartCollectionSingleton;
         //private FoodSingleton _foodSingleton;
@@ -24,6 +25,8 @@ namespace BakeryLalaland.ViewModel
         //private MenuCart.Category _category;
 
         public ObservableCollection<MenuCart> CartCollection { get => _cartCollection; set => _cartCollection = value; }
+        public int X { get => x; set => x = value; }
+
         //public string Name { get => _name; set => _name = value; }
         //public int Number { get => _number; set => _number = value; }
         //public string Image { get => _image; set => _image = value; }
@@ -36,6 +39,7 @@ namespace BakeryLalaland.ViewModel
             _cartCollectionSingleton = CartCollectionSingleton.GetInstance();
             CartCollection = new ObservableCollection<MenuCart>();
             CartCollection = _cartCollectionSingleton.GetCartCollection();
+            GetTotalPrice();
             //_foodSingleton = FoodSingleton.GetInstance();
 
             //Name = _foodSingleton.GetName();
@@ -46,6 +50,14 @@ namespace BakeryLalaland.ViewModel
             //Category = _foodSingleton.GetCategory();
         }
 
-        
+        public void GetTotalPrice()
+        {
+            foreach (var item in CartCollection)
+            {
+                X = X +item.Price;
+            }
+        }
+
+
     }
 }
