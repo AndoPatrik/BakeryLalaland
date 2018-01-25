@@ -1,0 +1,52 @@
+﻿<Page
+    x:Class="BakeryLalaland.View.MenuList"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BakeryLalaland.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="using:BakeryLalaland.ViewModel"
+    mc:Ignorable="d">
+
+    <Grid Background="Transparent">
+
+        <Grid.DataContext>
+            <viewModel:SerializeDrinksVm />
+        </Grid.DataContext>
+
+        <GridView x:Name="Menu" Height="640" Width="1400"    
+                  HorizontalAlignment="Center" 
+                      VerticalAlignment="Top"
+                      ItemsSource="{Binding DrinkCatalog}"
+                      SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                  IsItemClickEnabled="True">
+            <!--ItemClick="List_OnItemClick"-->
+
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel x:Name="MenuPanel"
+                                Margin="10,20,0,10" 
+                                Orientation="Vertical"
+                                HorizontalAlignment="Center" 
+                                Width="200" 
+                                VerticalAlignment="Top"
+                                Height="320">
+                        <StackPanel  Height="172" Width="200" BorderThickness="1" BorderBrush="Black">
+                            <Image x:Name="MenuImage" Source="{Binding Image}"  Height="170" Width="200" Stretch="Fill" />
+                        </StackPanel>
+                        <TextBlock Text="{Binding Name}" x:Name="Head"
+                                    FontWeight="Bold" VerticalAlignment="Top"
+                                     HorizontalAlignment="Center" FontSize="20"/>
+                        <TextBlock Text="{Binding Ingred}" TextWrapping="Wrap" Margin="0,10,0,10" HorizontalAlignment="Center" Height="50"/>
+                        <Button x:Name="OrderButton" Content="Order" HorizontalAlignment="Center" FontSize="20" Width="200" Foreground="Black" BorderThickness="1" BorderBrush="Black">
+                            <Button.Background>
+                                <SolidColorBrush Color="#FF6E3207" Opacity="0.6"/>
+                            </Button.Background>
+                        </Button>
+                    </StackPanel>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+
+    </Grid>
+</Page>

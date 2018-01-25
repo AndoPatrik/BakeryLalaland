@@ -8,21 +8,43 @@
     xmlns:viewModel="using:BakeryLalaland.ViewModel"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        
+    <Grid Background="Transparent">
+
         <Grid.DataContext>
             <viewModel:ProfileVM />
         </Grid.DataContext>
 
-        <TextBlock Text="{Binding Name}" FontSize="50"></TextBlock>
-        <TextBlock Text="{Binding Id}" Margin="0,50" FontSize="50"></TextBlock>
-        <TextBlock Text="{Binding Password}" Margin="0,100" FontSize="50"></TextBlock>
-        <TextBlock Text="{Binding ConfirmPassword}" Margin="0,150" FontSize="50"></TextBlock>
-        <TextBlock Text="{Binding City}" Margin="0,200" FontSize="50"></TextBlock>
-        <TextBlock Text="{Binding Street}" Margin="0,250" FontSize="50"></TextBlock>
-        <TextBlock Text="{Binding Number}" Margin="0,300" FontSize="50" SelectionChanged="TextBlock_SelectionChanged"></TextBlock>
-        <TextBlock Text="{Binding PostalCode}" Margin="0,350" FontSize="50"></TextBlock>
-        <TextBlock Text="{Binding PhoneNumber}" Margin="0,400" FontSize="50"></TextBlock>
-        <Button Content="BACK" Click="Button_Click"></Button>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="300"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                   Text="Personal information:" FontSize="40"/>
+
+        <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Hidden" VerticalScrollMode="Enabled" HorizontalScrollMode="Disabled" Grid.Column="1" Grid.Row="1">
+            <StackPanel>
+            <TextBox Text="{Binding Name}" FontSize="30" Margin="10"/>
+            <TextBox Text="{Binding Id}" FontSize="30" Margin="10"/>
+            <TextBox Text="{Binding Password}" FontSize="30" Margin="10"/>
+            <TextBox Text="{Binding ConfirmPassword}" FontSize="30" Margin="10"/>
+            <TextBox Text="{Binding City}" FontSize="30" Margin="10"/>
+            <TextBox Text="{Binding Street}" FontSize="30" Margin="10"/>
+            <TextBox Text="{Binding Number}" FontSize="30" Margin="10" />
+            <TextBox Text="{Binding PostalCode}" FontSize="30" Margin="10"/>
+                <TextBox Text="{Binding PhoneNumber}" FontSize="30" Margin="10"/>
+        </StackPanel>
+        </ScrollViewer>
+
+        <Button DataContext="ManagingUsersVM" Grid.Column="1" Grid.Row="2" Content="UPDATE" Command="{Binding UpdateItemCommand}"
+                HorizontalAlignment="Center" FontSize="30" Height="60" Width="200" BorderBrush="Black" BorderThickness="1"/>
+        
     </Grid>
 </Page>

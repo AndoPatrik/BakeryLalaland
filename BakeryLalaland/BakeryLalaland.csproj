@@ -128,6 +128,9 @@
     <Compile Include="View\ManagingUsersPage.xaml.cs">
       <DependentUpon>ManagingUsersPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\MenuList.xaml.cs">
+      <DependentUpon>MenuList.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MenuPage.xaml.cs">
       <DependentUpon>MenuPage.xaml</DependentUpon>
     </Compile>
@@ -153,6 +156,7 @@
     <Content Include="Assets\201.jpg" />
     <Content Include="Assets\301.jpg" />
     <Content Include="Assets\401.jpg" />
+    <Content Include="Assets\Back.png" />
     <Content Include="Assets\CartIcon.png" />
     <Content Include="Assets\Icon.png" />
     <Content Include="Assets\MainPageBackground.jpg" />
@@ -204,6 +208,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ManagingUsersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MenuList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
