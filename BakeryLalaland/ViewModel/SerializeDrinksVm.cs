@@ -19,6 +19,7 @@ namespace BakeryLalaland.ViewModel
         private FoodSingleton _foodSingleton;
         private ObservableCollection<MenuCart> _adToCartList;
         private CartCollectionSingleton _cartCollectionSingleton;
+        private int _numberOfOrders;
 
         //properties
         public RelayCommand AddItemCommand { get; set; }
@@ -27,6 +28,18 @@ namespace BakeryLalaland.ViewModel
         public MenuCart AddNewDrink { get; set; }
         public MenuCart Up { get; set; }
         public ObservableCollection<MenuCart> AdToCartList { get => _adToCartList; set => _adToCartList = value; }
+
+        public int NumberOfOrders
+        {
+            get => _numberOfOrders;
+            set
+            {
+                _numberOfOrders = value;
+                OnPropertyChanged(nameof(NumberOfOrders));
+                
+            }
+        }
+
         public IList<MenuCart.Category> MenuItemsCategories
         {
             get
@@ -44,7 +57,7 @@ namespace BakeryLalaland.ViewModel
                 OnPropertyChanged(nameof(DrinkCatalog));
             }
         }
-        //Unused
+        
         public MenuCart SelectedItem
         {
             get => _selectedItem;
@@ -55,9 +68,12 @@ namespace BakeryLalaland.ViewModel
             }
         }
 
+       
+        //Constructor
         public SerializeDrinksVm()
         {
             //initializing objects
+            
             _cartCollectionSingleton = CartCollectionSingleton.GetInstance();
             AddNewDrink = new MenuCart();
             Up = new MenuCart();
@@ -68,6 +84,7 @@ namespace BakeryLalaland.ViewModel
             _getDrinks = new GetItem();
             LoadDrinks();
             _foodSingleton = FoodSingleton.GetInstance();
+
 
             if (_cartCollectionSingleton.GetCartCollection() == null)
             {
@@ -80,7 +97,11 @@ namespace BakeryLalaland.ViewModel
             
             //_foodSingleton.SetCurrentOrder(SelectedItem);
 
-            //Task.Run(() => LoadDrinks());                                //serialization
+            if (_cartCollectionSingleton.GetCartCollection() != null)
+            {
+                NumberOfOrders = _cartCollectionSingleton.GetCartCollection().Count;
+
+            }
         }
 
         //Loading method
@@ -98,6 +119,12 @@ namespace BakeryLalaland.ViewModel
                 }
                 string error = e.Message;
             }
+        }
+
+        public int GetNumberOfOrders()
+        {
+            _numberOfOrders = _cartCollectionSingleton.GetCartCollection().Count;
+            return _numberOfOrders;
         }
 
 
