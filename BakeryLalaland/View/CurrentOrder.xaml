@@ -31,7 +31,7 @@
         <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical">
             <TextBlock Text="Your Current Orders:" FontSize="50"></TextBlock>
 
-            <ListView>
+            <ListView ItemsSource="{Binding CartCollection}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <Grid Width="1000">
@@ -40,11 +40,7 @@
                                 <ColumnDefinition Width="1*"/>
                                 <ColumnDefinition Width="1*"/>
                             </Grid.ColumnDefinitions>
-
-                            <TextBlock Text="{Binding Name}" Grid.Column="0" FontSize="32"/>
-                            <TextBlock Text="{Binding Price}" Grid.Column="1" FontSize="32"/>
-                            <Button Content="Cancel" HorizontalAlignment="Center" Grid.Column="2" FontSize="32"></Button>
-
+                            <TextBlock Text="{Binding Name}"></TextBlock>
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>

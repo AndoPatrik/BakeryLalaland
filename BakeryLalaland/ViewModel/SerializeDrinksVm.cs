@@ -16,6 +16,9 @@ namespace BakeryLalaland.ViewModel
         //instance fields
         private MenuCart _selectedItem;
         private readonly GetItem _getDrinks;                                   //serialization
+        private FoodSingleton _foodSingleton;
+        private ObservableCollection<MenuCart> _adToCartList;
+        private CartCollectionSingleton _cartCollectionSingleton;
 
         //properties
         public RelayCommand AddItemCommand { get; set; }
@@ -23,6 +26,7 @@ namespace BakeryLalaland.ViewModel
         public RelayCommand UpdateItemCommand { get; set; }
         public MenuCart AddNewDrink { get; set; }
         public MenuCart Up { get; set; }
+        public ObservableCollection<MenuCart> AdToCartList { get => _adToCartList; set => _adToCartList = value; }
         public IList<MenuCart.Category> MenuItemsCategories
         {
             get
@@ -40,6 +44,7 @@ namespace BakeryLalaland.ViewModel
                 OnPropertyChanged(nameof(DrinkCatalog));
             }
         }
+        //Unused
         public MenuCart SelectedItem
         {
             get => _selectedItem;
@@ -53,6 +58,7 @@ namespace BakeryLalaland.ViewModel
         public SerializeDrinksVm()
         {
             //initializing objects
+            _cartCollectionSingleton = CartCollectionSingleton.GetInstance();
             AddNewDrink = new MenuCart();
             Up = new MenuCart();
             AddItemCommand = new RelayCommand(DoAddDrink);
@@ -61,6 +67,20 @@ namespace BakeryLalaland.ViewModel
             SelectedItem = new MenuCart();
             _getDrinks = new GetItem();
             LoadDrinks();
+            _foodSingleton = FoodSingleton.GetInstance();
+
+            if (_cartCollectionSingleton.GetCartCollection() == null)
+            {
+                AdToCartList = new ObservableCollection<MenuCart>();
+            }
+            else
+            {
+                AdToCartList = _cartCollectionSingleton.GetCartCollection();
+            }
+
+            
+            //_foodSingleton.SetCurrentOrder(SelectedItem);
+
             //Task.Run(() => LoadDrinks());                                //serialization
         }
 
