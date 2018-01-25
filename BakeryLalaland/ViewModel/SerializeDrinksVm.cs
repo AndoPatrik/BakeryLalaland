@@ -77,7 +77,6 @@ namespace BakeryLalaland.ViewModel
             {
                 AdToCartList = _cartCollectionSingleton.GetCartCollection();
             }
-
             
             //_foodSingleton.SetCurrentOrder(SelectedItem);
 

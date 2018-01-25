@@ -33,23 +33,29 @@ namespace BakeryLalaland.View
         public MenuPage()
         {
             this.InitializeComponent();
+            BackButton.Visibility = Visibility.Collapsed;
+            //MenuFrame.Navigate(typeof(MenuList));
             _foodSingleton = FoodSingleton.GetInstance();
             _serializeDrinksVm = new SerializeDrinksVm();
             _cartCollectionSingleton = CartCollectionSingleton.GetInstance();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(MainPage));
-        }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(ProfileView));
+            MenuGrid.Visibility = Visibility.Collapsed;
+            MenuFrame.Navigate(typeof(ProfileView));
+            BackButton.Visibility = Visibility.Visible;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MenuPage));
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            MenuFrame.Navigate(typeof(CurrentOrder));
+            BackButton.Visibility = Visibility.Visible;
             _cartCollectionSingleton.SetCartCollection(_serializeDrinksVm.AdToCartList);
             Frame.Navigate(typeof(CurrentOrder));
 
@@ -72,7 +78,6 @@ namespace BakeryLalaland.View
             }
 
             // Add " item " to the cart collection 
-            
         }
     }
 }
