@@ -22,7 +22,7 @@ namespace BakeryLalaland.Persistency
         public async Task SavetoJson(ObservableCollection<MenuCart> items)
         {
             var localFolder = ApplicationData.Current.LocalFolder;
-            var jsonFile = await localFolder.CreateFileAsync("MenuCartFile2.txt", CreationCollisionOption.ReplaceExisting);
+            var jsonFile = await localFolder.CreateFileAsync("MenuCartFile4.txt", CreationCollisionOption.ReplaceExisting);
             var jsonSerializer = new DataContractJsonSerializer(typeof(ObservableCollection<MenuCart>));
             using (var stream = await jsonFile.OpenStreamForWriteAsync())
             {
@@ -34,7 +34,7 @@ namespace BakeryLalaland.Persistency
         public async Task<ObservableCollection<MenuCart>> LoadMenuFromJson()
         {
             var localFolder = ApplicationData.Current.LocalFolder;
-            var jsonFile = await localFolder.GetFileAsync("MenuCartFile2.txt");
+            var jsonFile = await localFolder.GetFileAsync("MenuCartFile4.txt");
             var jsonSerializer = new DataContractJsonSerializer(typeof(ObservableCollection<MenuCart>));
             using (var stream = await jsonFile.OpenStreamForReadAsync())
             {

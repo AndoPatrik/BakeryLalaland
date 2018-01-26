@@ -34,7 +34,6 @@ namespace BakeryLalaland.View
         {
             this.InitializeComponent();
             BackButton2.Visibility = Visibility.Collapsed;
-            MenuFrame.Navigate(typeof(MenuList));
             _foodSingleton = FoodSingleton.GetInstance();
             _serializeDrinksVm = new SerializeDrinksVm();
             _cartCollectionSingleton = CartCollectionSingleton.GetInstance();
