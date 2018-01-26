@@ -38,11 +38,14 @@
                                     FontWeight="Bold" VerticalAlignment="Top"
                                      HorizontalAlignment="Center" FontSize="20"/>
                             <TextBlock Text="{Binding Ingred}" TextWrapping="Wrap" Margin="0,10,0,10" HorizontalAlignment="Center" Height="50"/>
-                            <Button x:Name="OrderButton" Content="Order" HorizontalAlignment="Center" FontSize="20" Width="200" Foreground="Black" BorderThickness="1" BorderBrush="Black">
-                                <Button.Background>
+                        <TextBlock Text="{Binding Price}" FontWeight="Bold" VerticalAlignment="Top"
+                                   HorizontalAlignment="Center" FontSize="20"></TextBlock>
+                            <!--<Rectangle x:Name="OrderButton" Content="Order" HorizontalAlignment="Center" FontSize="20" Width="200" Foreground="Black" BorderThickness="1" BorderBrush="Black">
+                                --><!--<Button.Background>
                                     <SolidColorBrush Color="#FF6E3207" Opacity="0.6"/>
-                                </Button.Background>
-                            </Button>
+                                </Button.Background>--><!--
+                                
+                            </Rectangle>-->
                         </StackPanel>
 
                     </DataTemplate>
