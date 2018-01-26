@@ -128,9 +128,6 @@
     <Compile Include="View\ManagingUsersPage.xaml.cs">
       <DependentUpon>ManagingUsersPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MenuList.xaml.cs">
-      <DependentUpon>MenuList.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\MenuPage.xaml.cs">
       <DependentUpon>MenuPage.xaml</DependentUpon>
     </Compile>
@@ -241,10 +238,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ManagingUsersPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\MenuList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

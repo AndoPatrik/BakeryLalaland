@@ -26,9 +26,6 @@ namespace BakeryLalaland.View
         public ManagerPage()
         {
             this.InitializeComponent();
-            //var _enumval = Enum.GetValues(typeof(MenuCart.Category)).Cast<MenuCart.Category>();
-            //CategoryComboBox.ItemsSource = _enumval.ToList();
-            //this.DataContext = new MenuCart();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
