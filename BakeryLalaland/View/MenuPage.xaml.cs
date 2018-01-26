@@ -33,26 +33,24 @@ namespace BakeryLalaland.View
         public MenuPage()
         {
             this.InitializeComponent();
+            BackButton2.Visibility = Visibility.Collapsed;
+            //MenuFrame.Navigate(typeof(MenuList));
             _foodSingleton = FoodSingleton.GetInstance();
             _serializeDrinksVm = new SerializeDrinksVm();
             _cartCollectionSingleton = CartCollectionSingleton.GetInstance();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(MainPage));
-        }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(ProfileView));
+            //MenuFrame.Navigate(typeof(ProfileView));
+            BackButton2.Visibility = Visibility.Visible;
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            //MenuFrame.Navigate(typeof(CurrentOrder));
+            BackButton2.Visibility = Visibility.Visible;
             _cartCollectionSingleton.SetCartCollection(_serializeDrinksVm.AdToCartList);
-            Frame.Navigate(typeof(CurrentOrder));
-
         }
 
         private void List_OnItemClick(object sender, ItemClickEventArgs e)
@@ -67,16 +65,60 @@ namespace BakeryLalaland.View
             catch (Exception exception)
             {
                 string ex = exception.ToString();
-                MessageDialog msd = new MessageDialog(ex , "error");
+                MessageDialog msd = new MessageDialog(ex, "error");
                 msd.ShowAsync();
             }
-
             _serializeDrinksVm.GetNumberOfOrders();
-            
             
 
             // Add " item " to the cart collection 
+        }
 
+        private void NormalBackButton(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MenuPage));
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Menu.ItemsSource = _serializeDrinksVm.Muffins;
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            Menu.ItemsSource = _serializeDrinksVm.Cupcakes;
+
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            Menu.ItemsSource = _serializeDrinksVm.Cakes;
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            Menu.ItemsSource = _serializeDrinksVm.Healthy;
+        }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            Menu.ItemsSource = _serializeDrinksVm.Pizzas;
+        }
+
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+            Menu.ItemsSource = _serializeDrinksVm.Sandwiches;
+        }
+
+        private void Button_Click_8(object sender, RoutedEventArgs e)
+        {
+            Menu.ItemsSource = _serializeDrinksVm.Beverages;
+        }
+
+        private void Button_Click_9(object sender, RoutedEventArgs e)
+        {
+            Menu.ItemsSource = _serializeDrinksVm.DisplayedItems;
         }
     }
 }
+

@@ -9,7 +9,7 @@ using BakeryLalaland.Model;
 
 namespace BakeryLalaland.ViewModel
 {
-    class OrdersVm
+    class OrdersVm : NotifyPropertyClass
     {
         private ObservableCollection<MenuCart> _cartCollection;
         private int _totalPrice;
@@ -42,12 +42,14 @@ namespace BakeryLalaland.ViewModel
             GetTotalPrice();
             //_foodSingleton = FoodSingleton.GetInstance();
 
-            //Name = _foodSingleton.GetName();
+            //Name = _foodSingleton.GetName();  
             //Number = _foodSingleton.GetNumber();
             //Image = _foodSingleton.GetImage();
             //Price = _foodSingleton.GetPrice();
             //Ingred = _foodSingleton.GetIngredients();
             //Category = _foodSingleton.GetCategory();
+            GetTotalPrice();
+            
         }
 
         public void GetTotalPrice()
@@ -56,8 +58,6 @@ namespace BakeryLalaland.ViewModel
             {
                 TotalPrice = TotalPrice +item.Price;
             }
-        }
-
-
+        } 
     }
 }
