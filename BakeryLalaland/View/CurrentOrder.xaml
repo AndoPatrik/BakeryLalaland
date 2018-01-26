@@ -46,15 +46,14 @@
                 </ListView.ItemTemplate>
             </ListView>
 
-            <StackPanel Orientation="Horizontal" >
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBlock Text="Total price:" FontFamily="Baskerville Old Face" FontSize=" 50" Margin="0,0,20,0"/>
-                <TextBlock Text="{Binding TotalPrice}" FontFamily="Baskerville Old Face" FontSize="50"></TextBlock>
-                <TextBlock Text="DKK" FontSize=" 50" FontFamily="Baskerville Old Face"></TextBlock>
+                <TextBlock Text="{Binding TotalPrice}" FontFamily="Baskerville Old Face" Foreground="DarkRed" FontSize="50"></TextBlock>
+                <TextBlock Text="DKK" FontSize=" 50" FontFamily="Baskerville Old Face" Foreground="DarkRed"></TextBlock>
             </StackPanel>
 
         </StackPanel>
 
         <Button Content="Pay now" FontSize="50" FontFamily="Baskerville Old Face" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,50,0"/>
-        <Button Content="Back" FontSize="50" FontFamily="Baskerville Old Face" Grid.Row="2" Grid.Column="1" Click="Button_Click"/>
     </Grid>
 </Page>

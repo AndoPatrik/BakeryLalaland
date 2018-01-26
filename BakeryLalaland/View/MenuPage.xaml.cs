@@ -33,33 +33,24 @@ namespace BakeryLalaland.View
         public MenuPage()
         {
             this.InitializeComponent();
-            //BackButton.Visibility = Visibility.Collapsed;
-            //MenuFrame.Navigate(typeof(MenuList));
+            BackButton2.Visibility = Visibility.Collapsed;
+            MenuFrame.Navigate(typeof(MenuList));
             _foodSingleton = FoodSingleton.GetInstance();
             _serializeDrinksVm = new SerializeDrinksVm();
             _cartCollectionSingleton = CartCollectionSingleton.GetInstance();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MenuGrid.Visibility = Visibility.Collapsed;
-            MenuFrame.Navigate(typeof(ProfileView));
-            BackButton.Visibility = Visibility.Visible;
-            Frame.Navigate(typeof(MainPage));
-        }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(ProfileView));
+            MenuFrame.Navigate(typeof(ProfileView));
+            BackButton2.Visibility = Visibility.Visible;
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             MenuFrame.Navigate(typeof(CurrentOrder));
-            BackButton.Visibility = Visibility.Visible;
+            BackButton2.Visibility = Visibility.Visible;
             _cartCollectionSingleton.SetCartCollection(_serializeDrinksVm.AdToCartList);
-            Frame.Navigate(typeof(CurrentOrder));
-
         }
 
         private void List_OnItemClick(object sender, ItemClickEventArgs e)
@@ -74,7 +65,7 @@ namespace BakeryLalaland.View
             catch (Exception exception)
             {
                 string ex = exception.ToString();
-                MessageDialog msd = new MessageDialog(ex , "error");
+                MessageDialog msd = new MessageDialog(ex, "error");
                 msd.ShowAsync();
             }
             _serializeDrinksVm.GetNumberOfOrders();
@@ -82,5 +73,11 @@ namespace BakeryLalaland.View
 
             // Add " item " to the cart collection 
         }
+
+        private void NormalBackButton(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MenuPage));
+        }
     }
 }
+
