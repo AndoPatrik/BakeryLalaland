@@ -128,9 +128,6 @@
     <Compile Include="View\ManagingUsersPage.xaml.cs">
       <DependentUpon>ManagingUsersPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MenuList.xaml.cs">
-      <DependentUpon>MenuList.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\MenuPage.xaml.cs">
       <DependentUpon>MenuPage.xaml</DependentUpon>
     </Compile>
@@ -151,11 +148,44 @@
     <Content Include="Assets\001.jpg" />
     <Content Include="Assets\002.jpg" />
     <Content Include="Assets\003.jpg" />
+    <Content Include="Assets\004.jpg" />
+    <Content Include="Assets\005.jpg" />
+    <Content Include="Assets\006.jpg" />
+    <Content Include="Assets\007.jpg" />
+    <Content Include="Assets\008.jpg" />
+    <Content Include="Assets\009.jpg" />
+    <Content Include="Assets\010.jpg" />
+    <Content Include="Assets\011.jpg" />
+    <Content Include="Assets\012.jpg" />
     <Content Include="Assets\1.jpg" />
     <Content Include="Assets\101.jpg" />
+    <Content Include="Assets\102.png" />
+    <Content Include="Assets\103.jpg" />
     <Content Include="Assets\201.jpg" />
+    <Content Include="Assets\202.jpg" />
+    <Content Include="Assets\203.jpg" />
+    <Content Include="Assets\204.jpg" />
+    <Content Include="Assets\205.jpg" />
+    <Content Include="Assets\206.jpg" />
+    <Content Include="Assets\207.jpg" />
+    <Content Include="Assets\208.jpg" />
+    <Content Include="Assets\209.jpg" />
+    <Content Include="Assets\300.jpg" />
     <Content Include="Assets\301.jpg" />
+    <Content Include="Assets\302.jpg" />
+    <Content Include="Assets\303.jpg" />
+    <Content Include="Assets\304.jpg" />
     <Content Include="Assets\401.jpg" />
+    <Content Include="Assets\402.jpg" />
+    <Content Include="Assets\403.jpg" />
+    <Content Include="Assets\404.jpg" />
+    <Content Include="Assets\405.jpg" />
+    <Content Include="Assets\501.jpg" />
+    <Content Include="Assets\502.jpg" />
+    <Content Include="Assets\503.jpg" />
+    <Content Include="Assets\601.jpg" />
+    <Content Include="Assets\602.jpg" />
+    <Content Include="Assets\603.jpg" />
     <Content Include="Assets\Back.png" />
     <Content Include="Assets\CartIcon.png" />
     <Content Include="Assets\Icon.png" />
@@ -208,10 +238,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ManagingUsersPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\MenuList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

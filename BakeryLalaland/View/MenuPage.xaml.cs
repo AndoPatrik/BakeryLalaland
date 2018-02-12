@@ -69,7 +69,7 @@ namespace BakeryLalaland.View
                 msd.ShowAsync();
             }
             _serializeDrinksVm.GetNumberOfOrders();
-            
+            Frame.Navigate(typeof(MenuPage));
 
             // Add " item " to the cart collection 
         }
