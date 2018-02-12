@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Security.Authentication;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.System;
@@ -20,6 +21,17 @@ namespace BakeryLalaland.ViewModel
         private ObservableCollection<MenuCart> _adToCartList;
         private CartCollectionSingleton _cartCollectionSingleton;
         private int _numberOfOrders;
+
+        private ObservableCollection<MenuCart> _muffins;
+        private ObservableCollection<MenuCart> _cupcakes;
+        private ObservableCollection<MenuCart> _cakes;
+        private ObservableCollection<MenuCart> _healthy;
+        private ObservableCollection<MenuCart> _pizzas;
+        private ObservableCollection<MenuCart> _sandwiches;
+        private ObservableCollection<MenuCart> _beverages;
+        private bool _loaded = false;
+
+        private ObservableCollection<MenuCart> _displayedItems;
 
         //properties
         public RelayCommand AddItemCommand { get; set; }
@@ -68,7 +80,16 @@ namespace BakeryLalaland.ViewModel
             }
         }
 
-       
+        public ObservableCollection<MenuCart> Muffins { get => _muffins; set => _muffins = value; }
+        public ObservableCollection<MenuCart> Cupcakes { get => _cupcakes; set => _cupcakes = value; }
+        public ObservableCollection<MenuCart> Cakes { get => _cakes; set => _cakes = value; }
+        public ObservableCollection<MenuCart> Healthy { get => _healthy; set => _healthy = value; }
+        public ObservableCollection<MenuCart> Pizzas { get => _pizzas; set => _pizzas = value; }
+        public ObservableCollection<MenuCart> Sandwiches { get => _sandwiches; set => _sandwiches = value; }
+        public ObservableCollection<MenuCart> Beverages { get => _beverages; set => _beverages = value; }
+        public ObservableCollection<MenuCart> DisplayedItems { get => _displayedItems; set => _displayedItems = value; }
+
+
         //Constructor
         public SerializeDrinksVm()
         {
@@ -82,8 +103,17 @@ namespace BakeryLalaland.ViewModel
             UpdateItemCommand = new RelayCommand(DoUpdateDrink);
             SelectedItem = new MenuCart();
             _getDrinks = new GetItem();
-            LoadDrinks();
             _foodSingleton = FoodSingleton.GetInstance();
+
+            Muffins = new ObservableCollection<MenuCart>();
+            Cupcakes = new ObservableCollection<MenuCart>();
+            Cakes = new ObservableCollection<MenuCart>();
+            Pizzas = new ObservableCollection<MenuCart>();
+            Sandwiches = new ObservableCollection<MenuCart>();
+            Healthy = new ObservableCollection<MenuCart>();
+            Beverages = new ObservableCollection<MenuCart>();
+            DisplayedItems = new ObservableCollection<MenuCart>();
+    
 
 
             if (_cartCollectionSingleton.GetCartCollection() == null)
@@ -102,6 +132,9 @@ namespace BakeryLalaland.ViewModel
                 NumberOfOrders = _cartCollectionSingleton.GetCartCollection().Count;
 
             }
+
+           LoadDrinks();
+           
         }
 
         //Loading method
@@ -109,14 +142,49 @@ namespace BakeryLalaland.ViewModel
         {
             try
             {
-                DrinkCatalog = await _getDrinks.LoadMenuFromJson();
+                DisplayedItems = await _getDrinks.LoadMenuFromJson();
+                
+                
+                //DisplayedItems = DrinkCatalog;
+
+                foreach (var item in DisplayedItems)
+                {
+                    if (item.Categoryy == MenuCart.Category.Muffins)
+                    {
+                        Muffins.Add(item);
+                    }
+                    if (item.Categoryy == MenuCart.Category.Cupcakes)
+                    {
+                        Cupcakes.Add(item);
+                    }
+                    if (item.Categoryy == MenuCart.Category.Cakes)
+                    {
+                        Cakes.Add(item);
+                    }
+                    if (item.Categoryy == MenuCart.Category.Healthy)
+                    {
+                        Healthy.Add(item);
+                    }
+                    if (item.Categoryy == MenuCart.Category.Pizzas)
+                    {
+                        Pizzas.Add(item);
+                    }
+                    if (item.Categoryy == MenuCart.Category.Sandwiches)
+                    {
+                        Sandwiches.Add(item);
+                    }
+                    if (item.Categoryy == MenuCart.Category.Beverages)
+                    {
+                        Beverages.Add(item);
+                    }
+                }
             }
             catch (Exception e)
             {
-                foreach (MenuCart upDrink in DrinkCatalog)
-                {
-                    var drink = upDrink;
-                }
+                //foreach (MenuCart upDrink in DrinkCatalog)
+                //{
+                //    var drink = upDrink;
+                //}
                 string error = e.Message;
             }
         }

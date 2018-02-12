@@ -73,5 +73,11 @@ namespace BakeryLalaland.View
             }
 
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            //_serializeDrinksVm.DisplayedItems = _serializeDrinksVm.Cupcakes;
+           // Menu.ItemsSource = _serializeDrinksVm.Cupcakes;
+        }
     }
 }

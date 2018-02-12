@@ -39,6 +39,7 @@ namespace BakeryLalaland.ViewModel
             _cartCollectionSingleton = CartCollectionSingleton.GetInstance();
             CartCollection = new ObservableCollection<MenuCart>();
             CartCollection = _cartCollectionSingleton.GetCartCollection();
+            GetTotalPrice();
             //_foodSingleton = FoodSingleton.GetInstance();
 
             //Name = _foodSingleton.GetName();  
@@ -55,7 +56,7 @@ namespace BakeryLalaland.ViewModel
         {
             foreach (var item in CartCollection)
             {
-                TotalPrice = TotalPrice + item.Price;
+                TotalPrice = TotalPrice +item.Price;
             }
         } 
     }

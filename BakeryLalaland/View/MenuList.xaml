@@ -13,7 +13,10 @@
         <Grid.DataContext>
             <viewModel:SerializeDrinksVm />
         </Grid.DataContext>
+        
+        <Button Content="muffins" Click="Button_Click_3"></Button>
 
+<<<<<<< HEAD
         <GridView x:Name="Menu" Height="640" Width="1400"    
                   HorizontalAlignment="Center" 
                       VerticalAlignment="Top"
@@ -52,5 +55,8 @@
                 </GridView.ItemTemplate>
         </GridView>
 
+=======
+        
+>>>>>>> 48303393ece23e781c2b73bf270dce598bd2dcaa
     </Grid>
 </Page>

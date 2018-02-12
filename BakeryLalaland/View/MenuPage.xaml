@@ -75,13 +75,14 @@
         </Border>
 
         <StackPanel Grid.Row="1" HorizontalAlignment="Center" Orientation="Horizontal" Margin="10,0,10,0">
-            <Button Content="Muffins" FontSize="20" FontFamily="Baskerville Old Face" BorderThickness="3" BorderBrush="Black" Margin="5,0,5,0" />
-            <Button Content="Cupcakes" FontSize="20" FontFamily="Baskerville Old Face" BorderThickness="3" BorderBrush="Black" Margin="5,0,5,0"/>
-            <Button Content="Cakes" FontSize="20" FontFamily="Baskerville Old Face" BorderThickness="3" BorderBrush="Black" Margin="5,0,5,0"/>
-            <Button Content="Healthy desserts" FontSize="20" FontFamily="Baskerville Old Face" BorderThickness="3" BorderBrush="Black" Margin="5,0,5,0"/>
-            <Button Content="Pizzas" FontSize="20" FontFamily="Baskerville Old Face" BorderThickness="3" BorderBrush="Black" Margin="5,0,5,0"/>
-            <Button Content="Sandwiches" FontSize="20" FontFamily="Baskerville Old Face" BorderThickness="3" BorderBrush="Black" Margin="5,0,5,0"/>
-            <Button Content="Beverages" FontSize="20" FontFamily="Baskerville Old Face" BorderThickness="3" BorderBrush="Black" Margin="5,0,5,0"/>
+            <Button Content="Muffins" FontSize="20" FontFamily="Baskerville Old Face" BorderThickness="3" BorderBrush="Black" Margin="5,0,5,0" Click="Button_Click" />
+            <Button Content="Cupcakes" FontSize="20" FontFamily="Baskerville Old Face" BorderThickness="3" BorderBrush="Black" Margin="5,0,5,0" Click="Button_Click_3"/>
+            <Button Content="Cakes" FontSize="20" FontFamily="Baskerville Old Face" BorderThickness="3" BorderBrush="Black" Margin="5,0,5,0" Click="Button_Click_4"/>
+            <Button Content="Healthy desserts" FontSize="20" FontFamily="Baskerville Old Face" BorderThickness="3" BorderBrush="Black" Margin="5,0,5,0" Click="Button_Click_5"/>
+            <Button Content="Pizzas" FontSize="20" FontFamily="Baskerville Old Face" BorderThickness="3" BorderBrush="Black" Margin="5,0,5,0" Click="Button_Click_6"/>
+            <Button Content="Sandwiches" FontSize="20" FontFamily="Baskerville Old Face" BorderThickness="3" BorderBrush="Black" Margin="5,0,5,0" Click="Button_Click_7"/>
+            <Button Content="Beverages" FontSize="20" FontFamily="Baskerville Old Face" BorderThickness="3" BorderBrush="Black" Margin="5,0,5,0" Click="Button_Click_8"/>
+            <Button Content="All" FontSize="20" FontFamily="Baskerville Old Face" BorderThickness="3" BorderBrush="Black" Margin="5,0,5,0" Click="Button_Click_9"/>
         </StackPanel>
 
         <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" Orientation="Horizontal" Margin="0,0,10,0">
@@ -100,9 +101,44 @@
             <TextBlock x:Name="C" Text="{Binding NumberOfOrders , Mode=TwoWay , UpdateSourceTrigger=PropertyChanged}" FontSize=" 20"></TextBlock>
         </StackPanel>
 
-        <Grid Grid.ColumnSpan="2" Grid.Row="2" Background="Transparent">
-            <Frame Name="MenuFrame" Background="Transparent"/>
-        </Grid>
+        <GridView x:Name="Menu" Height="640" Width="1400"    
+                  HorizontalAlignment="Center" 
+                      VerticalAlignment="Top"
+                      ItemsSource="{Binding DisplayedItems}"
+                      SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                      IsItemClickEnabled="True"
+                      ItemClick="List_OnItemClick"
+                  Grid.ColumnSpan="2"
+                  Grid.Row="2">
+
+
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel x:Name="MenuPanel"
+                                Margin="10,20,0,10" 
+                                Orientation="Vertical"
+                                HorizontalAlignment="Center" 
+                                Width="200" 
+                                VerticalAlignment="Top"
+                                Height="320">
+                        <StackPanel  Height="172" Width="200" BorderThickness="1" BorderBrush="Black">
+                            <Image x:Name="MenuImage" Source="{Binding Image}"  Height="170" Width="200" Stretch="Fill" />
+                        </StackPanel>
+                        <TextBlock Text="{Binding Name}" x:Name="Head"
+                                    FontWeight="Bold" VerticalAlignment="Top"
+                                     HorizontalAlignment="Center" FontSize="20"/>
+                        <TextBlock Text="{Binding Ingred}" TextWrapping="Wrap" Margin="0,10,0,10" HorizontalAlignment="Center" Height="50"/>
+                        <Button x:Name="OrderButton" Content="Order" HorizontalAlignment="Center" FontSize="20" Width="200" Foreground="Black" BorderThickness="1" BorderBrush="Black">
+                            <Button.Background>
+                                <SolidColorBrush Color="#FF6E3207" Opacity="0.6"/>
+                            </Button.Background>
+                        </Button>
+                    </StackPanel>
+
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+
 
     </Grid>
 </Page>

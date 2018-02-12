@@ -45,12 +45,11 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <TextBlock Text="Total price:" FontFamily="Baskerville Old Face" FontSize=" 50" Margin="0,0,20,0"/>
                 <TextBlock Text="{Binding TotalPrice}" FontFamily="Baskerville Old Face" Foreground="DarkRed" FontSize="50"></TextBlock>
-                <TextBlock Text="DKK" FontSize=" 50" FontFamily="Baskerville Old Face" Foreground="DarkRed"></TextBlock>
-            </StackPanel>
+                    <TextBlock Text="DKK" FontSize=" 50" FontFamily="Baskerville Old Face" Foreground="DarkRed"></TextBlock>
+                </StackPanel>
 
         </StackPanel>
 
