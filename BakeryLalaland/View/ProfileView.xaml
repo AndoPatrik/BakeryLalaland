@@ -31,19 +31,19 @@
 
         <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Hidden" VerticalScrollMode="Enabled" HorizontalScrollMode="Disabled" Grid.Column="1" Grid.Row="1">
             <StackPanel>
-            <TextBox Text="{Binding Name}" FontSize="30" Margin="10"/>
-            <TextBox Text="{Binding Id}" FontSize="30" Margin="10"/>
-            <TextBox Text="{Binding Password}" FontSize="30" Margin="10"/>
-            <TextBox Text="{Binding ConfirmPassword}" FontSize="30" Margin="10"/>
-            <TextBox Text="{Binding City}" FontSize="30" Margin="10"/>
-            <TextBox Text="{Binding Street}" FontSize="30" Margin="10"/>
-            <TextBox Text="{Binding Number}" FontSize="30" Margin="10" />
-            <TextBox Text="{Binding PostalCode}" FontSize="30" Margin="10"/>
-                <TextBox Text="{Binding PhoneNumber}" FontSize="30" Margin="10"/>
+            <TextBox Text="{Binding Name, Mode=TwoWay}" FontSize="30" Margin="10"/>
+            <TextBox Text="{Binding Id, Mode=TwoWay}" FontSize="30" Margin="10"/>
+            <TextBox Text="{Binding Password, Mode=TwoWay}" FontSize="30" Margin="10"/>
+            <TextBox Text="{Binding ConfirmPassword, Mode=TwoWay}" FontSize="30" Margin="10"/>
+            <TextBox Text="{Binding City, Mode=TwoWay}" FontSize="30" Margin="10"/>
+            <TextBox Text="{Binding Street, Mode=TwoWay}" FontSize="30" Margin="10"/>
+            <TextBox Text="{Binding Number, Mode=TwoWay}" FontSize="30" Margin="10" />
+            <TextBox Text="{Binding PostalCode, Mode=TwoWay}" FontSize="30" Margin="10"/>
+                <TextBox Text="{Binding PhoneNumber, Mode=TwoWay}" FontSize="30" Margin="10"/>
         </StackPanel>
         </ScrollViewer>
 
-        <Button DataContext="ManagingUsersVM" Grid.Column="1" Grid.Row="2" Content="UPDATE" Command="{Binding UpdateItemCommand}"
+        <Button Grid.Column="1" Grid.Row="2" Content="UPDATE" Command="{Binding UpdateCommand}"
                 HorizontalAlignment="Center" FontSize="30" Height="60" Width="200" BorderBrush="Black" BorderThickness="1"/>
         
     </Grid>
